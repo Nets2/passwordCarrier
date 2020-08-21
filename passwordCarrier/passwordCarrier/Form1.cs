@@ -29,28 +29,23 @@ namespace passwordCarrier
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string path = @"d:\pwCarrier\passwordCarrier\passwordCarrier\passwordCarrier\data\";
+            string path = @"../../data/";
             using (SHA256 sha256Hash = SHA256.Create())
             {
                 string finalPath = path + (GetHash(sha256Hash, textBox1.Text));
-                /*using (FileStream fs = File.Create(finalPath))
-                {
-                    fs.Write(new UTF8Encoding(true).GetBytes(GetHash(sha256Hash,textBox2.Text)),0,GetHash(sha256Hash,textBox2.Text).Length);
-                }*/
-
                 try
                 {
                     using (StreamReader sr = File.OpenText(finalPath))
                     {
                         if (sr.ReadLine().Equals(GetHash(sha256Hash, textBox2.Text)))
                         {
-                            Form2 newWindows = new Form2(this, finalPath, GetHash(sha256Hash,textBox2.Text));
+                            Form2 newWindows = new Form2(this, finalPath, GetHash(sha256Hash, textBox2.Text));
                             newWindows.Show();
-                            this.Visible = false; 
+                            this.Visible = false;
                         }
                         else
                         {
-                            string message = "Wrong login or password";
+                            string message = "Error: Wrong username or password";
                             string caption = "Error";
                             MessageBoxButtons buttons = MessageBoxButtons.OK;
                             DialogResult result;
@@ -63,7 +58,7 @@ namespace passwordCarrier
                 catch
                 {
                     // Initializes the variables to pass to the MessageBox.Show method.
-                    string message = "Wrong login or password";
+                    string message = "Error: Wrong username or password";
                     string caption = "Error";
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     DialogResult result;
@@ -71,21 +66,6 @@ namespace passwordCarrier
                     // Displays the MessageBox.
                     result = MessageBox.Show(message, caption, buttons);
                 }
-                if (this.textBox1.Text.Equals("test") && this.textBox2.Text.Equals("teste"))
-                {
-
-                }
-                /*else
-                {
-                    // Initializes the variables to pass to the MessageBox.Show method.
-                    string message = "Wrong login or password";
-                    string caption = "Error";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    DialogResult result;
-
-                    // Displays the MessageBox.
-                    result = MessageBox.Show(message, caption, buttons);
-                }*/
             }
         }
 
