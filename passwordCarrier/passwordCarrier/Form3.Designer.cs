@@ -37,7 +37,7 @@ namespace passwordCarrier
             this.cancelButton = new System.Windows.Forms.Button();
             this.loginTextArea = new System.Windows.Forms.TextBox();
             this.passwordTextArea = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.password = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -53,7 +53,7 @@ namespace passwordCarrier
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.loginTextArea, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.passwordTextArea, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.password, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Login, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -115,15 +115,15 @@ namespace passwordCarrier
             this.passwordTextArea.TabIndex = 4;
             this.passwordTextArea.UseSystemPasswordChar = true;
             // 
-            // label2
+            // password
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Location = new System.Drawing.Point(26, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.password.Location = new System.Drawing.Point(26, 38);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(100, 23);
+            this.password.TabIndex = 1;
+            this.password.Text = "Password";
+            this.password.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login
             // 
@@ -158,14 +158,12 @@ namespace passwordCarrier
 
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Login;
         private System.Windows.Forms.TextBox loginTextArea;
+        private System.Windows.Forms.Label password;
         private System.Windows.Forms.TextBox passwordTextArea;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button validateButton;
-
-        private System.Windows.Forms.Label label1;
 
         #endregion
     }
