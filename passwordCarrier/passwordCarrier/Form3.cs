@@ -8,26 +8,26 @@ namespace passwordCarrier
 {
     public partial class Form3 : Form
     {
-        private Form1 Parent { get; set; }
+        private Form1 FormParent { get; set; }
         private bool FileExistFlag { get; set; }
         public Form3( Form1 parent)
         {
-            this.Parent = parent;
+            this.FormParent = parent;
             InitializeComponent();
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            Parent.WindowState = FormWindowState.Minimized;
+            FormParent.WindowState = FormWindowState.Minimized;
             this.BringToFront();
             this.Activate();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            this.Parent.Visible = true;
-            this.Parent.WindowState = FormWindowState.Normal;
-            this.Parent.BringToFront();
+            this.FormParent.Visible = true;
+            this.FormParent.WindowState = FormWindowState.Normal;
+            this.FormParent.BringToFront();
             this.Close();
         }
 
@@ -51,7 +51,7 @@ namespace passwordCarrier
                     //si ce n'est pas le cas on le créer et on passe le flag a false
                     using (FileStream fs = File.Create(finalPath))
                     {
-                        byte[] info = new UTF8Encoding(true).GetBytes(password);
+                        byte[] info = new UTF8Encoding(true).GetBytes(Security.GetHash(sha256Hash,password));
                         // Add some information to the file.
                         fs.Write(info, 0, info.Length);
                     }

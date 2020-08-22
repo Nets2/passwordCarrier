@@ -6,10 +6,10 @@ namespace passwordCarrier
 {
     public partial class Form2 : Form
     {
-        private Form1 Parent { get; set; }
+        private Form1 FormParent { get; set; }
         public Form2(Form1 parent, string login, string saltedPassword)
         {
-            this.Parent = parent;
+            this.FormParent = parent;
 
             InitializeComponent();
             this.label1.Text = login;
@@ -19,7 +19,7 @@ namespace passwordCarrier
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Parent.Visible = true;
+            this.FormParent.Visible = true;
             this.Close();
         }
         
